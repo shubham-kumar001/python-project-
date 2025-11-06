@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Results of CUTM</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header>
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="CUTM" style="height:80px; display:block; margin:auto;">
+    <h1>Student Results of CUTM</h1>
+    <nav>
+        <a href="/">Start</a>
+        <a href="/add">Add Student</a>
+        <a href="/results">View Results</a>
+    </nav>
+</header>
+
+<main>
+{% block content %}{% endblock %}
+</main>
+
+<footer>
+    &copy; 2025-26 CUTM University Project | All Rights Reserved
+</footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .login-box {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      font-weight: 600;
+    }
+    input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    .error {
+      color: red;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Faculty Login</h2>
+    {% if error %}
+      <p class="error">{{ error }}</p>
+    {% endif %}
+    <form method="POST" action="{{ url_for('login') }}">
+      <div class="form-group">
+        <label for="email">College Email</label>
+        <input type="email" id="email" name="email" placeholder="example@cutm.ac.in" required />
+      </div>
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </div>
+</body>
+</html>
